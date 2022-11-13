@@ -2,6 +2,9 @@ version: "3.9"
 services:
   app:
     build: ./infra/php
+    ports:
+      - '8000:8000'
+      - '${VITE_PORT:-5173}:${VITE_PORT:-5173}'
     volumes:
       - ./src:/data
 
